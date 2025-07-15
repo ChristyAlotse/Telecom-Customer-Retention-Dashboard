@@ -280,6 +280,7 @@ elif selected == "À propos":
     with col1:
         st.image("Images/me.jpg")
     with col2:
+        st.caption("Réalisé par :")
         st.markdown("👤 ALOTSE Christy")
         st.markdown("""
         **Data Scientist** spécialisée dans le traitement de données, la visualisation analytique et le développement de modèles de machine learning adaptés aux enjeux métier.
