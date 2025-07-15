@@ -97,8 +97,45 @@ img {
 """
 st.markdown(dynamic_theme, unsafe_allow_html=True)
 
-# --- Logo Sidebar ---
-st.sidebar.image("Images/Huawei.png", width=500)
+# --- Logo dynamique clair/sombre ---
+logo_css = """
+<style>
+.logo-light {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.logo-dark {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    .logo-light {
+        display: none;
+    }
+    .logo-dark {
+        display: block;
+    }
+}
+</style>
+"""
+
+# Appliquer le CSS
+st.sidebar.markdown(logo_css, unsafe_allow_html=True)
+
+# Afficher les deux logos (le bon sera automatiquement visible selon le mode)
+st.sidebar.markdown(
+    """
+    <img src="Images/Huawei.png" class="logo-light">
+    <img src="Images/Huawei1.png" class="logo-dark">
+    """,
+    unsafe_allow_html=True
+)
+
 
 # --- Header centré et responsive ---
 st.markdown("""
